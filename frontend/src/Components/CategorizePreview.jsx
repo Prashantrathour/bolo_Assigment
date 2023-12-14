@@ -29,8 +29,8 @@ function CategorizePreview({ind,currentdata,data,setData, setShowImage, onOpen }
       <div className=" flex justify-center gap-3 mt-5">
         {currentdata.categories.map((el,x)=>
         <div key={x} className="text-center" onDragEnter={()=>dragContainer.current=el} >
-                <div className='bg-red-200 rounded-md mb-3 py-2 px-5 font-semibold text-[20px]'>{el}</div>
-                <div className='bg-red-200 flex flex-col gap-2 min-h-[110px] bg-${x%2==0?"red":"yellow"}-200 p-3 rounded-md'>
+                <div className='bg-yellow-200 rounded-md mb-3 py-2 px-5 font-semibold text-[20px]'>{el}</div>
+                <div className='bg-yellow-200 flex flex-col gap-2 min-h-[110px] bg-${x%2==0?"red":"yellow"}-200 p-3 rounded-md'>
                     { currentdata.items.map((item,i)=>item.stored==el?<span key={i} draggable onDragEnd={handleDrag} onDragStart={()=>dragIteam.current=i} className="py-1 px-3 rounded-md font-semibold text-[20px]" style={{ border:'1px solid gray'}}>{item.value}</span>:null)}  
                 </div>
         </div>)}

@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Home from './Pages/Home';
+import MainRoutes from './MainRoutes';
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
         <h1 className='p-2 text-white font-semibold text-lg'>Bolo Form</h1>
         
       </div>
-     <Home/>
+     <MainRoutes/>
     </div>
   );
 }

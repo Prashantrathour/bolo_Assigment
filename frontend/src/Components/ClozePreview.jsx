@@ -39,7 +39,7 @@ function ClozePreview({ind,currentdata,data,setData,setShowImage,onOpen}) {
           />
         ) : null}
       </h3>
-      {/* to render options */}
+     
       <div className="my-5 ml-3">
         Options :
         {options.map((el, i) =>
@@ -56,14 +56,16 @@ function ClozePreview({ind,currentdata,data,setData,setShowImage,onOpen}) {
           )
         )}
       </div>
-      {/* to render qustion with Container to drag option */}
+     {/* // it replace anwer words with "_"
+     // spliting words maping them
+      // if element is "_" then render cantainer eles span tag */}
       <div className="flex gap-2 items-center ml-3" id="clozeAns">
         {currentdata.question
-          .replace(/\*([^*]+)\*/g, "_") // it replace anwer words with "_"
-          .split(" ") // spliting words maping them
+          .replace(/\*([^*]+)\*/g, "_") 
+          .split(" ") 
           .map((el, x) =>
             el == "_" ? (
-              // if element is "_" then render cantainer eles span tag
+             
               <p
                 key={x}
                 onDragEnter={() => (dragContainer.current = x)}

@@ -9,7 +9,7 @@ function ComprehensionPreview({ind,currentdata,data,setData, setShowImage, onOpe
       setData(newdata)
   }
 
-  // console.log(currentdata)
+  
 
   return (
     <div>

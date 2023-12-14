@@ -6,7 +6,7 @@ import { MdDeleteOutline } from "react-icons/md";
 import { RxDragHandleHorizontal } from "react-icons/rx";
 import { errorAlert, succesAlert } from "./Notification";
 function Comprehension({ data, ind, question, setQuestions }) {
-  // refs to store drag values
+ 
   const QuestionDragStart = useRef(0);
   const QuestionDragEnd = useRef(0);
   const OptionDragStart = useRef(0);
@@ -114,7 +114,7 @@ function Comprehension({ data, ind, question, setQuestions }) {
     })
   }
 
-  // upload image 
+  
   
   async function uploadImage(e) {
     const image = e.target.files[0];
@@ -156,7 +156,7 @@ function Comprehension({ data, ind, question, setQuestions }) {
         placeholder="Add passage here..."
       />
 
-      {/* for image  selection */}
+    
       <div
         onClick={() => document.getElementById(`${ind}getFile`).click()}
         className="text-center p-2 w-[200px] overflow-hidden border-2 border-gray flex flex-col justify-center rounded-xl cursor-pointer"
@@ -173,7 +173,7 @@ function Comprehension({ data, ind, question, setQuestions }) {
         />
       </div>
 
-      {/* render mcqs */}
+   
       <div>
         {data?.questions.map((el, i) => (
           <div
@@ -223,7 +223,7 @@ function Comprehension({ data, ind, question, setQuestions }) {
                   </button>
                 </div>
               ))}
-              {/* if option is less then 4 then show this add option input */}
+            
               {el.option.length < 4 ? (
                 <Input
                   type="text"

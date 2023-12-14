@@ -69,7 +69,7 @@ function Cloze({ data, ind, question, setQuestions }) {
         Question {ind + 1}
       </h5>
 
-      {/* for image  selection */}
+      
       <div
         onClick={() => document.getElementById(`${ind}getFile`).click()}
         className="text-center w-[200px] p-2  bg-green-400 hover:bg-green-500 text-white   border-2 border-gray flex flex-col justify-center rounded-xl cursor-pointer"

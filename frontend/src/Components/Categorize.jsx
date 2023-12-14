@@ -23,7 +23,7 @@ function Categorize({ data, ind, question, setQuestions }) {
     setQuestions(newdata);
   }
   function handleAddCategory(e) {
-    
+    console.log(e.target.value)
     if (e.target.value != "") {
       let newdata = [...question];
     
@@ -34,15 +34,15 @@ function Categorize({ data, ind, question, setQuestions }) {
       }
     }
   }
+  // change the value of categories
   function handleChangeCategory(i, value) {
-    // change the value of categories
     let newdata = [...question];
     newdata[ind].categories[i] = value;
     setQuestions(newdata);
   }
 
+  // delete category 
   function handleDeleteCategory(i) {
-    // delete category by index
     let newdata = [...question];
     if (newdata[ind].categories.length == 1) {
       return;
@@ -51,12 +51,12 @@ function Categorize({ data, ind, question, setQuestions }) {
     setQuestions(newdata);
   }
 
+  // add Element to items
+  // if it inculdes categories already then return
   function handleAddItems(e) {
-    // add Element to items
     if (e.target.value != "") {
       let newdata = [...question];
 
-      // if it inculdes categories already then return
       for (let i = 0; i < newdata[ind].items.length; i++) {
         if (newdata[ind].items[i].value == e.target.value) {
           return;
@@ -72,21 +72,21 @@ function Categorize({ data, ind, question, setQuestions }) {
     }
   }
 
+  // changing the values
   function handleChangeItems(i, value) {
-    // changing the values of items
     let newdata = [...question];
     newdata[ind].items[i].value = value;
     setQuestions(newdata);
   }
+  // add or change category
   function handleChangeItemsCategory(i, value) {
-    // add or change category of items
     let newdata = [...question];
     newdata[ind].items[i].belong = value;
     setQuestions(newdata);
   }
 
+  //  delete the items 
   function handleDeleteItems(i) {
-    // to delete the items by index
     let newdata = [...question];
     if (newdata[ind].items.length == 1) {
       return;
@@ -97,7 +97,7 @@ function Categorize({ data, ind, question, setQuestions }) {
 
   function handleCategoryDrag() {
     let newdata = [...question];
-    // swaping drag start and end values
+   
     let temp = newdata[ind].categories[CatDragStart.current];
     newdata[ind].categories[CatDragStart.current] =
       newdata[ind].categories[CatDragEnd.current];
@@ -108,7 +108,7 @@ function Categorize({ data, ind, question, setQuestions }) {
 
   function handleItemsDrag() {
     let newdata = [...question];
-    // swaping drag start and end values
+    
     let temp = newdata[ind].items[ItemDragStart.current];
     newdata[ind].items[ItemDragStart.current] =
       newdata[ind].items[ItemDragEnd.current];
@@ -174,7 +174,6 @@ function Categorize({ data, ind, question, setQuestions }) {
       </div>
       <p className="my-3 font-semibold">Categories</p>
 
-      {/* render categories */}
       <div>
         {data?.categories.map((el, i) => (
           <div
@@ -212,7 +211,7 @@ function Categorize({ data, ind, question, setQuestions }) {
         />
       </div>
 
-      {/* rebner items */}
+   
       <div className="w-full">
         <h5 className="font-semibold my-3">Items</h5>
         {data?.items.map((el, i) => (

@@ -12,3 +12,15 @@ export const getQuestion=async(dispatch)=>{
             dispatch({type:Question_Error})
         }
 }
+export const getQuestionByid=(id)=>async(dispatch)=>{
+    dispatch({type:Question_request})
+        try {
+            const res=await axios.get(process.env.REACT_APP_URL+'/form/'+id)
+            console.log(res)
+            dispatch({type:Question_success,payload:res.data})
+
+
+        } catch (error) {
+            dispatch({type:Question_Error})
+        }
+}
