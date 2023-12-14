@@ -5,6 +5,7 @@ const responseSchema = new mongoose.Schema({
   formId: { type: mongoose.Schema.Types.ObjectId },
   user: { type: String, required: true },
   marks: { type: Number, required: true },
+  questions:[]
 }, { timestamps: true });
 
 // Form Schema

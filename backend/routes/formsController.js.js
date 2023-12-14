@@ -41,6 +41,7 @@ FormControllrouter.get('/:id', async (req, res) => {
  */
 FormControllrouter.post('/', async (req, res) => {
   const data = req.body;
+  console.log(data)
   try {
     if (!data) {
       return res.status(400).json({ message: 'Please provide form data in the request body' });
